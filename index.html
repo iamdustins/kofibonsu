@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kofi Bonsu | Afro-Soul Artist, Producer & Songwriter</title>
+  <meta name="description" content="Official site of Kofi Bonsu, Afro-Soul artist and producer formerly known as Brizzy On Da Beat. Listen to new music, shop merch, see shows, and book Kofi.">
+  <meta name="keywords" content="Kofi Bonsu, Afro-Soul, producer, songwriter, Brizzy On Da Beat, new music, merch">
+  <meta property="og:title" content="Kofi Bonsu | Afro-Soul Artist, Producer & Songwriter">
+  <meta property="og:description" content="Official site of Kofi Bonsu. Listen to new music, shop merch, see shows, and book Kofi.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kofibonsu.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #080808;
+      --bg-secondary: #0f0f0f;
+      --bg-tertiary: #161616;
+      --text-primary: #f0ebe3;
+      --text-secondary: #a89f91;
+      --text-muted: #5c5752;
+      --accent-gold: #c9a84c;
+      --accent-gold-hover: #d4b55a;
+      --accent-warm: #c4703a;
+      --border: #222222;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .nav-logo-img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent-gold);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after, .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(8,8,8,0.98);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+      padding: 1.5rem 2rem;
+    }
+
+    .mobile-nav.open { display: block; }
+
+    .mobile-nav a {
+      display: block;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.875rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--accent-gold); }
+
+    /* ===== PAGE SYSTEM ===== */
+    .page {
+      display: none;
+      padding-top: 72px;
+      min-height: 100vh;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .page.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 2rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(180deg, rgba(8,8,8,0.88) 0%, rgba(8,8,8,0.55) 40%, rgba(8,8,8,0.92) 100%),
+        url('KofiBonsuMain.png') center 30% / cover no-repeat;
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      box-shadow: inset 0 0 150px rgba(0,0,0,0.7);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .hero-logo {
+      width: 280px;
+      max-width: 70vw;
+      margin: 0 auto 1.5rem;
+      filter: drop-shadow(0 4px 30px rgba(0,0,0,0.5));
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero-headline {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-headline span { color: var(--accent-gold); }
+
+    .hero-subheadline {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      align-items: center;
+    }
+
+    .hero-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid var(--accent-gold);
+      cursor: pointer;
+    }
+
+    .hero-cta-primary:hover {
+      background: transparent;
+      color: var(--accent-gold);
+    }
+
+    .hero-cta-secondary, .hero-cta-tertiary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .hero-cta-tertiary { color: var(--text-muted); font-size: 0.85rem; }
+    .hero-cta-secondary:hover { color: var(--text-primary); }
+    .hero-cta-tertiary:hover { color: var(--text-secondary); }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image { position: relative; }
+    .about-image img {
+      width: 100%;
+      border-radius: 4px;
+      filter: grayscale(10%) contrast(1.05);
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -12px; left: -12px;
+      width: 60px; height: 60px;
+      border-top: 2px solid var(--accent-gold);
+      border-left: 2px solid var(--accent-gold);
+    }
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -12px; right: -12px;
+      width: 60px; height: 60px;
+      border-bottom: 2px solid var(--accent-gold);
+      border-right: 2px solid var(--accent-gold);
+    }
+
+    .about-text h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    .about-cta {
+      display: inline-block;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--accent-gold);
+      padding-bottom: 2px;
+      transition: all 0.3s;
+      cursor: pointer;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      font-family: inherit;
+    }
+
+    .about-cta:hover { border-bottom-color: transparent; }
+
+    .about-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat { text-align: center; }
+    .stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.25rem;
+    }
+
+    /* ===== EMAIL ===== */
+    .email-section {
+      background: var(--bg-tertiary);
+      border-top: 1px solid var(--border);
+    }
+
+    .email-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .email-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .email-content p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s;
+      font-family: inherit;
+    }
+
+    .email-input:focus { border-color: var(--accent-gold); }
+    .email-input::placeholder { color: var(--text-muted); }
+
+    .email-btn {
+      padding: 0.875rem 1.75rem;
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+
+    .email-btn:hover { background: var(--accent-gold-hover); }
+
+    .email-disclaimer {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    /* ===== RELEASE CARD ===== */
+    .release-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 0;
+    }
+
+    .release-artwork {
+      position: relative;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      overflow: hidden;
+    }
+
+    .release-artwork-bg {
+      position: absolute;
+      inset: 0;
+      background: url('clean_kofibonsuname.jpg') center / cover;
+      opacity: 0.12;
+      filter: blur(2px);
+    }
+
+    .release-artwork-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .release-number {
+      font-family: 'Cinzel', serif;
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(201,168,76,0.3);
+    }
+
+    .release-badge {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: var(--accent-warm);
+      color: white;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .release-info {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .release-label {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .release-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .release-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .release-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .release-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+    }
+    .btn-primary:hover { background: var(--accent-gold-hover); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* ===== SHOP ===== */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-gold);
+    }
+
+    .product-image {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image-placeholder {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    .product-preorder-badge {
+      position: absolute;
+      top: 0.75rem; left: 0.75rem;
+      background: var(--accent-warm);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info { padding: 1.25rem; }
+    .product-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+    .product-price {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .product-price .preorder-tag {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+    .product-description {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== PRODUCT DETAIL PAGE ===== */
+    .product-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .product-gallery {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-gallery-main {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+    }
+
+    .product-gallery-main img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .product-gallery-placeholder {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: var(--text-muted);
+      opacity: 0.3;
+    }
+
+    .product-gallery-thumbs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .product-thumb {
+      width: 70px;
+      height: 70px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.3s;
+      background: var(--bg-tertiary);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .product-thumb:hover, .product-thumb.active {
+      border-color: var(--accent-gold);
+    }
+
+    .product-details h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-details .preorder-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-details .preorder-badge-inline {
+      background: var(--accent-warm);
+      color: white;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-details .price-inline {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+
+    .product-meaning {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .product-specs {
+      margin-bottom: 1.5rem;
+    }
+
+    .product-specs h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .product-specs ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .product-specs li {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .product-specs li::before {
+      content: '—';
+      color: var(--accent-gold);
+    }
+
+    .product-specs li:last-child { border-bottom: none; }
+
+    .size-chart-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      padding: 0;
+    }
+
+    .size-chart-btn:hover { text-decoration: underline; }
+
+    .shipping-note {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .shipping-note strong {
+      color: var(--accent-warm);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .add-to-cart-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 1.5rem;
+      font-family: inherit;
+    }
+
+    .add-to-cart-btn:hover { background: var(--accent-gold-hover); }
+
+    /* ===== SIZE CHART MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalIn 0.3s ease-out;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+    }
+
+    .modal-close:hover { color: var(--text-primary); }
+
+    .modal-body { padding: 1.5rem; }
+
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .size-table th, .size-table td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .size-table th {
+      color: var(--accent-gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      background: var(--bg-tertiary);
+    }
+
+    .size-table td {
+      color: var(--text-secondary);
+    }
+
+    .size-table tr:hover td {
+      background: rgba(201,168,76,0.05);
+    }
+
+    .modal-note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== MUSIC PAGE ===== */
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .music-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      transition: border-color 0.3s;
+    }
+
+    .music-card:hover { border-color: var(--accent-gold); }
+
+    .music-artwork {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+    }
+
+    .music-artwork .artwork-text {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .music-info { padding: 1.5rem; }
+    .music-info h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    .music-info .music-meta {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .music-info p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .music-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .music-links a {
+      padding: 0.4rem 0.875rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: all 0.3s;
+    }
+
+    .music-links a:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    .video-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .video-thumb {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .video-play {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .video-play:hover {
+      transform: scale(1.1);
+      background: var(--accent-gold);
+    }
+
+    .video-info { padding: 1.25rem; }
+    .video-info h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .video-info p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ===== SHOWS PAGE ===== */
+    .shows-empty {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+
+    .shows-empty-icon {
+      font-size: 3rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .shows-empty h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .shows-empty p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .past-shows {
+      margin-top: 3rem;
+    }
+
+    .past-shows h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .show-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .show-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .show-info p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .show-date {
+      text-align: right;
+    }
+
+    .show-date .date-day {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+
+    .show-date .date-month {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .booking-cta {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .booking-cta h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .booking-cta p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .booking-email {
+      color: var(--accent-gold);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .booking-email:hover { text-decoration: underline; }
+
+    /* ===== CONTACT PAGE ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+
+    .contact-card:hover { border-color: var(--accent-gold); }
+
+    .contact-card-icon {
+      font-size: 2rem;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+
+    .contact-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .contact-card a:hover { text-decoration: underline; }
+
+    .contact-form-section {
+      margin-top: 3rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2.5rem;
+    }
+
+    .contact-form-section h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+
+    .form-submit:hover { background: var(--accent-gold-hover); }
+
+    /* ===== BIO PAGE ===== */
+    .bio-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .bio-content p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-content p:first-child::first-letter {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      float: left;
+      line-height: 1;
+      padding-right: 0.75rem;
+      padding-top: 0.25rem;
+      color: var(--accent-gold);
+    }
+
+    .bio-quote {
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-primary);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    /* ===== VIDEOS PAGE ===== */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo-img {
+      height: 50px;
+      width: auto;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social a {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover { color: var(--accent-gold); }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .about-grid,
+      .product-detail,
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .release-card,
+      .music-card { grid-template-columns: 1fr; }
+      .shop-grid,
+      .video-grid,
+      .videos-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .email-form { flex-direction: column; }
+      .hero-logo { width: 200px; }
+    }
+
+    @media (max-width: 600px) {
+      .shop-grid,
+      .video-grid,
+      .videos-grid,
+      .music-grid { grid-template-columns: 1fr; }
+      .hero-cta-group { width: 100%; }
+      .hero-cta-primary,
+      .hero-cta-secondary,
+      .hero-cta-tertiary { width: 100%; justify-content: center; }
+      .hero-logo { width: 160px; }
+      .section { padding: 3rem 1.5rem; }
+      .product-details h1 { font-size: 1.5rem; }
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+  </style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a onclick="showPage('home')">
+      <img src="nobackground_kofibonsuname.png" alt="Kofi Bonsu" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')" data-page="home">Home</a></li>
+      <li><a onclick="showPage('music')" data-page="music">Music</a></li>
+      <li><a onclick="showPage('videos')" data-page="videos">Videos</a></li>
+      <li><a onclick="showPage('shows')" data-page="shows">Shows</a></li>
+      <li><a onclick="showPage('shop')" data-page="shop">Shop</a></li>
+      <li><a onclick="showPage('bio')" data-page="bio">Bio</a></li>
+      <li><a onclick="showPage('contact')" data-page="contact">Contact</a></li>
+    </ul>
+    <button class="nav-mobile-btn" onclick="toggleMobileNav()">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="showPage('home'); toggleMobileNav()">Home</a>
+  <a onclick="showPage('music'); toggleMobileNav()">Music</a>
+  <a onclick="showPage('videos'); toggleMobileNav()">Videos</a>
+  <a onclick="showPage('shows'); toggleMobileNav()">Shows</a>
+  <a onclick="showPage('shop'); toggleMobileNav()">Shop</a>
+  <a onclick="showPage('bio'); toggleMobileNav()">Bio</a>
+  <a onclick="showPage('contact'); toggleMobileNav()">Contact</a>
+</div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <img src="nobackground_kofibonsuname.png" alt="Kofi Bonsu" class="hero-logo">
+      <p class="hero-label">Afro-Soul Artist, Producer & Songwriter</p>
+      <h1 class="hero-headline">The Sound of <span>Now</span></h1>
+      <p class="hero-subheadline">
+        Formerly known as Brizzy On Da Beat. New music, new era. Afro-Soul that moves the body and the spirit.
+      </p>
+      <div class="hero-cta-group">
+        <button class="hero-cta-primary" onclick="showPage('music')">
+          <span>▶</span> Stream "10" — New Single
+        </button>
+        <button class="hero-cta-secondary" onclick="document.getElementById('home-email').scrollIntoView({behavior:'smooth'})">
+          Join the inner circle →
+        </button>
+        <button class="hero-cta-tertiary" onclick="showPage('shop')">
+          Shop the drop
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="home-bio">
+    <div class="section about-grid">
+      <div class="about-image">
+        <img src="KofiBonsuMain.png" alt="Kofi Bonsu performing live">
+      </div>
+      <div class="about-text">
+        <h3>About Kofi Bonsu</h3>
+        <p>
+          Kofi Bonsu is an Afro-Soul artist, producer, and songwriter whose sound bridges the gap between traditional African rhythms and contemporary soul. Formerly known as Brizzy On Da Beat, he's spent years crafting a sonic identity that honors heritage while pushing forward.
+        </p>
+        <p>
+          His work has resonated with audiences across continents, blending live instrumentation with electronic production to create something unmistakably his own.
+        </p>
+        <button class="about-cta" onclick="showPage('bio')">Read full bio →</button>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Vibes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="home-music">
+    <div class="section-header">
+      <p class="section-label">Latest Release</p>
+      <h2 class="section-title">New Music</h2>
+    </div>
+    <div class="release-card">
+      <div class="release-artwork">
+        <span class="release-badge">New Single</span>
+        <div class="release-artwork-bg"></div>
+        <div class="release-artwork-inner">
+          <div class="release-number">10</div>
+        </div>
+      </div>
+      <div class="release-info">
+        <p class="release-label">Out Now</p>
+        <h3 class="release-title">"10"</h3>
+        <p class="release-meta">Single · 2026</p>
+        <p class="release-description">
+          The latest from Kofi Bonsu — a track that distills a decade of growth into three minutes of pure Afro-Soul energy. Available on all platforms.
+        </p>
+        <div class="release-actions">
+          <a href="#" class="btn btn-primary">Stream on Spotify</a>
+          <a href="#" class="btn btn-outline">Apple Music</a>
+          <a href="#" class="btn btn-outline">Watch Video</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-section" id="home-email">
+    <div class="section email-content">
+      <p class="section-label">Stay Connected</p>
+      <h3>Join the Inner Circle</h3>
+      <p>New music, behind-the-scenes, and first access to shows and drops. No spam — just the signal.</p>
+      <form class="email-form" onsubmit="event.preventDefault(); alert('Thanks for signing up!');">
+        <input type="email" class="email-input" placeholder="your@email.com" required>
+        <button type="submit" class="email-btn">Join</button>
+      </form>
+      <p class="email-disclaimer">Unsubscribe anytime. We respect your privacy.</p>
+    </div>
+  </section>
+
+  <section class="section" id="home-shop">
+    <div class="section-header">
+      <p class="section-label">Merch</p>
+      <h2 class="section-title">Shop the Drop</h2>
+    </div>
+    <div class="shop-grid">
+      <div class="product-card" onclick="showPage('product')">
+        <div class="product-image">
+          <span class="product-preorder-badge">Preorder</span>
+          <span class="product-image-placeholder">KB</span>
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Kofi Bonsu Tee — Classic Fit</h4>
+          <p class="product-price"><span class="preorder-tag">Preorder ·</span> $50</p>
+          <p class="product-description">DTG printed design. Classic fit. Allow up to 21 days for processing.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-preorder-badge">Preorder</span>
+          <span class="product-image-placeholder">EP</span>
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">"10" EP — Limited Edition</h4>
+          <p class="product-price"><span class="preorder-tag">Preorder ·</span> $25</p>
+          <p class="product-description">Limited run physical EP with exclusive artwork and liner notes.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-image-placeholder">♪</span>
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Digital Discography</h4>
+          <p class="product-price">$15</p>
+          <p class="product-description">Complete digital collection including unreleased tracks and remixes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ==================== MUSIC PAGE ==================== -->
+<div class="page" id="page-music">
+  <div class="section">
+    <div class="section-header">
+      <p class="section-label">Discography</p>
+      <h2 class="section-title">Music</h2>
+    </div>
+
+    <div class="music-grid">
+      <div class="music-card">
+        <div class="music-artwork">
+          <div class="artwork-text">10</div>
+        </div>
+        <div class="music-info">
+          <h4>"10"</h4>
+          <p class="music-meta">Single · 2026</p>
+          <p>The latest single — a decade of growth distilled into pure Afro-Soul energy.</p>
+          <div class="music-links">
+            <a href="#">Spotify</a>
+            <a href="#">Apple Music</a>
+            <a href="#">Tidal</a>
+            <a href="#">Bandcamp</a>
+          </div>
+        </div>
+      </div>
+      <div class="music-card">
+        <div class="music-artwork">
+          <div class="artwork-text" style="font-size:1.5rem; color: var(--text-muted);">EP</div>
+        </div>
+        <div class="music-info">
+          <h4>Untitled EP</h4>
+          <p class="music-meta">EP · Coming Soon</p>
+          <p>The next chapter. Stay tuned for release details and pre-save links.</p>
+          <div class="music-links">
+            <a href="#">Pre-save</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-section">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <p class="section-label">Visuals</p>
+        <h2 class="section-title" style="font-size: 1.8rem;">Music Videos</h2>
+      </div>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumb">
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <h4>"10" — Official Video</h4>
+            <p>Coming soon</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">
+            <div class="video-play">▶</div>
+          </div>
+          <div class="video-info">
+            <h4>Behind the Music</h4>
+            <p>Documentary series — Episode 1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== VIDEOS PAGE ==================== -->
+<div class="page" id="page-videos">
+  <div class="section">
+    <div class="section-header">
+      <p class="section-label">Visuals</p>
+      <h2 class="section-title">Videos</h2>
+    </div>
+    <div class="videos-grid">
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <h4>"10" — Official Video</h4>
+          <p>Official music video for the latest single.</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <h4>Behind the Music: Episode 1</h4>
+          <p>The making of "10" — studio sessions and creative process.</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <h4>Live at The Venue</h4>
+          <p>Full live performance — intimate setting, raw energy.</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-play">▶</div>
+        </div>
+        <div class="video-info">
+          <h4>Freestyle Session</h4>
+          <p>Unplugged freestyle over classic Afrobeat instrumentals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SHOWS PAGE ==================== -->
+<div class="page" id="page-shows">
+  <div class="section">
+    <div class="section-header">
+      <p class="section-label">Live</p>
+      <h2 class="section-title">Shows</h2>
+    </div>
+
+    <div class="shows-empty">
+      <div class="shows-empty-icon">◉</div>
+      <h3>No Upcoming Shows</h3>
+      <p>No upcoming shows announced yet. Check back soon or join the inner circle for first access.</p>
+    </div>
+
+    <div class="past-shows">
+      <h3>Past Shows</h3>
+      <div class="show-row">
+        <div class="show-info">
+          <h4>Summer Soul Festival</h4>
+          <p>Brooklyn, NY</p>
+        </div>
+        <div class="show-date">
+          <div class="date-day">15</div>
+          <div class="date-month">Jun 2026</div>
+        </div>
+      </div>
+      <div class="show-row">
+        <div class="show-info">
+          <h4>The Basement Sessions</h4>
+          <p>Atlanta, GA</p>
+        </div>
+        <div class="show-date">
+          <div class="date-day">03</div>
+          <div class="date-month">Jun 2026</div>
+        </div>
+      </div>
+      <div class="show-row">
+        <div class="show-info">
+          <h4>Afro-Soul Nights</h4>
+          <p>Los Angeles, CA</p>
+        </div>
+        <div class="show-date">
+          <div class="date-day">22</div>
+          <div class="date-month">May 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-cta">
+      <h3>Book Kofi Bonsu</h3>
+      <p>For booking inquiries, reach out directly:</p>
+      <a href="mailto:Kofibonsubookings@gmail.com" class="booking-email">Kofibonsubookings@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SHOP PAGE ==================== -->
+<div class="page" id="page-shop">
+  <div class="section">
+    <div class="section-header">
+      <p class="section-label">Merch</p>
+      <h2 class="section-title">Shop</h2>
+    </div>
+    <div class="shop-grid">
+      <div class="product-card" onclick="showPage('product')">
+        <div class="product-image">
+          <span class="product-preorder-badge">Preorder</span>
+          <span class="product-image-placeholder">KB</span>
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Kofi Bonsu Tee — Classic Fit</h4>
+          <p class="product-price"><span class="preorder-tag">Preorder ·</span> $50</p>
+          <p class="product-description">DTG printed design. Classic fit. Allow up to 21 days for processing.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-preorder-badge">Preorder</span>
+          <span class="product-image-placeholder">EP</span>
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">"10" EP — Limited Edition</h4>
+          <p class="product-price"><span class="preorder-tag">Preorder ·</span> $25</p>
+          <p class="product-description">Limited run physical EP with exclusive artwork and liner notes.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="product-image-placeholder">♪</span>
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Digital Discography</h4>
+          <p class="product-price">$15</p>
+          <p class="product-description">Complete digital collection including unreleased tracks and remixes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PRODUCT DETAIL PAGE ==================== -->
+<div class="page" id="page-product">
+  <div class="section">
+    <div class="product-detail">
+      <div class="product-gallery">
+        <div class="product-gallery-main">
+          <span class="product-gallery-placeholder">KB</span>
+        </div>
+        <div class="product-gallery-thumbs">
+          <div class="product-thumb active">Front</div>
+          <div class="product-thumb">Back</div>
+          <div class="product-thumb">Model</div>
+        </div>
+      </div>
+      <div class="product-details">
+        <h1>Kofi Bonsu Tee — Classic Fit</h1>
+        <div class="preorder-row">
+          <span class="preorder-badge-inline">Preorder</span>
+          <span class="price-inline">$50</span>
+        </div>
+        <div class="product-meaning">
+          <p>This isn't just a tee — it's a statement. The Kofi Bonsu logo, rendered in gold and stone, represents a decade of sound and soul. DTG printed for detail that lasts.</p>
+        </div>
+        <div class="product-specs">
+          <h4>Details</h4>
+          <ul>
+            <li>DTG printed design</li>
+            <li>Classic fit (not oversized)</li>
+            <li>100% cotton</li>
+            <li>Pre-shrunk</li>
+            <li>Machine wash cold, hang dry</li>
+          </ul>
+        </div>
+        <button class="size-chart-btn" onclick="openModal()">📐 View Size Chart</button>
+        <div class="shipping-note">
+          <strong>Preorder Item</strong>
+          Please allow up to 21 days for processing and shipping. All sales are final unless the item is defective or damaged upon arrival.
+        </div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Size Chart Modal -->
+<div class="modal-overlay" id="sizeModal" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Size Chart</h3>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest (in)</th>
+            <th>Length (in)</th>
+            <th>Sleeve (in)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>S</td><td>36–38</td><td>28</td><td>8.5</td></tr>
+          <tr><td>M</td><td>39–41</td><td>29</td><td>9</td></tr>
+          <tr><td>L</td><td>42–44</td><td>30</td><td>9.5</td></tr>
+          <tr><td>XL</td><td>45–47</td><td>31</td><td>10</td></tr>
+          <tr><td>XXL</td><td>48–50</td><td>32</td><td>10.5</td></tr>
+        </tbody>
+      </table>
+      <p class="modal-note">Measurements are approximate. Classic fit — true to size. If between sizes, size up for a relaxed fit or down for a closer fit.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BIO PAGE ==================== -->
+<div class="page" id="page-bio">
+  <div class="section">
+    <div class="section-header">
+      <p class="section-label">Story</p>
+      <h2 class="section-title">Bio</h2>
+    </div>
+    <div class="bio-content">
+      <p>
+        Kofi Bonsu didn't arrive overnight. Born from years of grinding as Brizzy On Da Beat, he shed the alias to step into something truer — a sound that fuses the raw pulse of Afrobeat with the emotional depth of soul music. The name change wasn't rebranding. It was rebirth.
+      </p>
+      <p>
+        As a producer first, Kofi built his foundation in the studio, crafting beats for many artists before finding the courage to center his own voice. That journey — from behind the boards to the front of the stage — informs every note he plays now.
+      </p>
+      <div class="bio-quote">
+        "The beat is the body. The melody is the spirit. I make music for both."
+      </div>
+      <p>
+        His latest single, "10," marks a milestone — a decade in the game, distilled into three minutes of pure intention. It's Afro-Soul in its truest form: rhythmic, melodic, and unapologetically human.
+      </p>
+      <p>
+        Whether he's performing live, producing in the studio, or building community through his art, Kofi Bonsu moves with one purpose — to create music that moves people.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CONTACT PAGE ==================== -->
+<div class="page" id="page-contact">
+  <div class="section">
+    <div class="section-header">
+      <p class="section-label">Reach Out</p>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-card-icon">✉</div>
+        <h3>General Inquiries</h3>
+        <p>For press, collaborations, and general questions.</p>
+        <a href="mailto:Kofibonsu@kofibonsu.com">Kofibonsu@kofibonsu.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">◉</div>
+        <h3>Bookings</h3>
+        <p>For live performances, events, and appearances.</p>
+        <a href="mailto:Kofibonsubookings@gmail.com">Kofibonsubookings@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="contact-form-section">
+      <h3>Send a Message</h3>
+      <form onsubmit="event.preventDefault(); alert('Message sent! We will get back to you soon.');">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <select id="contact-subject" required>
+            <option value="">Select a subject</option>
+            <option value="general">General</option>
+            <option value="booking">Booking</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <img src="nobackground_kofibonsuname.png" alt="Kofi Bonsu" class="footer-logo-img">
+  <ul class="footer-links">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('music')">Music</a></li>
+    <li><a onclick="showPage('videos')">Videos</a></li>
+    <li><a onclick="showPage('shows')">Shows</a></li>
+    <li><a onclick="showPage('shop')">Shop</a></li>
+    <li><a onclick="showPage('bio')">Bio</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="#" title="Instagram">◉</a>
+    <a href="#" title="YouTube">▶</a>
+    <a href="#" title="Spotify">◆</a>
+    <a href="#" title="Twitter">●</a>
+  </div>
+  <p class="footer-copy">© 2026 Kofi Bonsu. All rights reserved.</p>
+</footer>
+
+<script>
+  // Page navigation
+  function showPage(pageName) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + pageName).classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.nav-links a[data-page="' + pageName + '"]').forEach(a => a.classList.add('active'));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Mobile nav toggle
+  function toggleMobileNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+
+  // Modal
+  function openModal() {
+    document.getElementById('sizeModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (!e || e.target === document.getElementById('sizeModal') || e.target.closest('.modal-close')) {
+      document.getElementById('sizeModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>
